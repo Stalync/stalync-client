@@ -28,6 +28,8 @@ class Client {
 
     connect() {
         let URL = `ws://ws.stalync.tech?developerID=${this.developerID}&applicationName=${this.applicationName}`;
+        if(typeof window === "undefined") var window = {};
+
         if ('WebSocket' in window) {
             this.websocketClient = new WebSocket(URL);
         } else if ('MozWebSocket' in window) {
