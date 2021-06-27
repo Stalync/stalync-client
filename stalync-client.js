@@ -27,7 +27,7 @@ class Client {
     }
 
     connect() {
-        let URL = `http://ws.stalync.tech?developerID=${this.developerID}&applicationName=${this.applicationName}`;
+        let URL = `ws://ws.stalync.tech?developerID=${this.developerID}&applicationName=${this.applicationName}`;
         if ('WebSocket' in window) {
             this.websocketClient = new WebSocket(URL);
         } else if ('MozWebSocket' in window) {
